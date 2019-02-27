@@ -1,0 +1,25 @@
+{
+    "storeArray": [
+        { "id": 1, "location": "500 Interstate Dr." },
+        { "id": 2, "location": "939 Seymour Ave." },
+        { "id": 3, "location": "903 Joyce Ln." }
+    ],
+    "employeeArray": [
+        { "id": 1, "storeId": 1, "firstName": "James", "lastName": "Farrell" },
+        { "id": 2, "storeId": 2, "firstName": "Shawn", "lastName": "Brock" },
+        { "id": 3, "storeId": 3, "firstName": "Stephen", "lastName": "Stephenson" }
+    ],
+    "candyTypeArray": [
+        { "id": 1, "name": "Chocolatey" },
+        { "id": 2, "name": "Gummy" },
+        { "id": 3, "name": "Lollipops" }
+    ],
+    "candyArray": [
+        { "id": 1, "type": 1, "name": "Chocolate Bar" },
+        { "id": 2, "type": 2, "name": "Gummy Bears" },
+        { "id": 3, "type": 3, "name": "Tootsie Roll Pop" },
+        { "id": 4, "type": 2, "name": "Jelly Beans" },
+        { "id": 5, "type": 1, "name": "Chocolate Raisins" }
+
+    ]
+}
