@@ -7,7 +7,7 @@ class EmployeeList extends Component {
             <h3>Employee List</h3>
             {
                 this.props.employees.map(employee =>
-                    <div key={`employee--` + employee.id}>
+                    <div key={`employee--${employee.id}`}>
                         {employee.firstName} {employee.lastName}
                     </div>
                     )
