@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import bear from "../img/gummyBear2.png"
+import food from "../img/food.png"
 
 
 
@@ -23,7 +24,7 @@ class CandyList extends Component {
                                 .map(candy =>
                                     <div key={candy.id}>
                                             {candy.name}
-                                            <button className="delButton" onClick={() => this.props.discontinue(candy.id)} >X</button>
+                                            <button className="delButton" onClick={() => this.props.discontinue(candy.id)}><img src={food} alt="food" className="foodX" /></button>
                                         </div>
                                     )
                                 }
