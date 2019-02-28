@@ -12,3 +12,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.candyList {
+  display: flex;
+  flex-direction: column;
+}
+.candyListHeader {
+  text-align: center;
+}
+
+.candyContainer {
+  flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.candyColumn {
+  width: 30%;
+}
+
+.delButton {
+  margin: 0px 0px 0px 5px;
+  border-radius: 5px;
+  background-color: rgb(75, 144, 247);
+  color: white;
+}
