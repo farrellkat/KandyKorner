@@ -13,27 +13,48 @@ code {
     monospace;
 }
 
+.storeList,
+.employees,
 .candyList {
   display: flex;
   flex-direction: column;
 }
+
+.storeHeader,
+.employeeHeader,
 .candyListHeader {
   text-align: center;
+  margin-bottom: 30px;
 }
 
+.storeContainer,
+.employeeContainer,
 .candyContainer {
   flex-direction: row;
     display: flex;
     justify-content: space-evenly;
 }
 
-.candyColumn {
-  width: 30%;
-}
-
 .delButton {
   margin: 0px 0px 0px 5px;
-  border-radius: 5px;
+  border-radius: 25%;
+  color: rgb(248, 238, 238);
+  background-color: rgb(75, 144, 247);
+  border: none;
+}
+
+.candyType {
   background-color: rgb(75, 144, 247);
   color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.employeeLogo,
+.openLogo,
+.gummybear {
+  width: 100px;
+  margin: auto;
+  border: none;
 }

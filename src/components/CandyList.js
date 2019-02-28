@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import bear from "../img/gummyBear2.png"
+
 
 
 
@@ -8,6 +10,7 @@ class CandyList extends Component {
 
         return (
             <section className="candyList">
+            <img src={bear} alt="bear" className="gummybear" />
                 <h3 className="candyListHeader">Candy List</h3>
                 <div className="candyContainer">
                 {
@@ -17,10 +20,10 @@ class CandyList extends Component {
                             <div className="candyHolder">
                             {
                                 this.props.candies.filter(candy => candy.candyTypeId === candyType.id)
-                                    .map(candy =>
-                                        <div key={candy.id}>
+                                .map(candy =>
+                                    <div key={candy.id}>
                                             {candy.name}
-                                            <button className="delButton" onClick={() => this.props.discontinue(candy.id)}> X </button>
+                                            <button className="delButton" onClick={() => this.props.discontinue(candy.id)} >X</button>
                                         </div>
                                     )
                                 }
