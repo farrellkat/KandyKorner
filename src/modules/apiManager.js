@@ -11,7 +11,7 @@ export default {
         return fetch(`${settings.remoteURL}/${item}/${id}`, {
             method: "DELETE"
         })
-            .then(() => fetch(`${settings.remoteURL}/candies`).then(e => e.json())
+            .then(() => fetch(`${settings.remoteURL}/${item}`).then(e => e.json())
             )
     }
 }

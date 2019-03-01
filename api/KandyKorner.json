@@ -25,12 +25,6 @@
       "storeId": 2,
       "firstName": "Shawn",
       "lastName": "Brock"
-    },
-    {
-      "id": 3,
-      "storeId": 3,
-      "firstName": "Stephen",
-      "lastName": "Stephenson"
     }
   ],
   "candyTypes": [
@@ -52,21 +46,6 @@
       "id": 5,
       "candyTypeId": 1,
       "name": "Chocolate Raisins"
-    },
-    {
-      "id": 6,
-      "candyTypeId": 1,
-      "name": "Chocolate Bar"
-    },
-    {
-      "id": 7,
-      "candyTypeId": 2,
-      "name": "Gummy Bears"
-    },
-    {
-      "id": 8,
-      "candyTypeId": 3,
-      "name": "Tootsie Roll Pop"
     }
   ]
 }

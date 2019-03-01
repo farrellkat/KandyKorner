@@ -28,11 +28,17 @@ code {
 }
 
 .storeContainer,
-.employeeContainer,
 .candyContainer {
   flex-direction: row;
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.employeeContainer {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
 }
 
 .delButton {

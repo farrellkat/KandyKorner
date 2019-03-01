@@ -3,10 +3,7 @@ import { Route } from 'react-router-dom'
 import EmployeeList from './EmployeeList'
 import CandyList from './CandyList'
 import StoreList from './StoreList'
-import storeManager from '../modules/storeManager';
-import employeeManager from '../modules/employeeManager';
-import candyTypeManager from '../modules/candyTypeManager';
-import candyManager from '../modules/candyManager';
+import apiManager from '../modules/apiManager';
 
 export default class ApplicationViews extends Component {
 
@@ -17,35 +14,31 @@ export default class ApplicationViews extends Component {
         candies: []
     }
 
-    discontinue = id => {
-        fetch(`http://localhost:5002/candies/${id}`, {
-            method: "DELETE"
-        }).then(() =>
-            fetch("http://localhost:5002/candies"))
-            .then(res => res.json())
-            .then(candies => this.setState({
-                candies: candies
+    discontinue = (item, id) => {
+        apiManager.removeAndList(item, id)
+            .then(array => this.setState({
+                [`${item}`]: array
             })
             )
     }
 
     componentDidMount() {
-        storeManager.getAll().then(stores => {
+        apiManager.getAll("stores").then(stores => {
             this.setState({
                 stores: stores
             })
         })
-            .then(() => employeeManager.getAll().then(employees => {
+            .then(() => apiManager.getAll("employees").then(employees => {
                 this.setState({
                     employees: employees
                 })
             }))
-            .then(() => candyTypeManager.getAll().then(candyTypes => {
+            .then(() => apiManager.getAll("candyTypes").then(candyTypes => {
                 this.setState({
                     candyTypes: candyTypes
                 })
             }))
-            .then(() => candyManager.getAll().then(candies => {
+            .then(() => apiManager.getAll("candies").then(candies => {
                 this.setState({
                     candies: candies
                 })
@@ -59,7 +52,7 @@ export default class ApplicationViews extends Component {
                     return <StoreList stores={this.state.stores} />
                 }} />
                 <Route exact path="/employees" render={(props) => {
-                    return <EmployeeList employees={this.state.employees} />
+                    return <EmployeeList discontinue={this.discontinue} employees={this.state.employees} />
                 }} />
                 <Route exact path="/candies" render={(props) => {
                     return <CandyList discontinue={this.discontinue} candyTypes={this.state.candyTypes}

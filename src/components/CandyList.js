@@ -24,7 +24,7 @@ class CandyList extends Component {
                                 .map(candy =>
                                     <div key={candy.id}>
                                             {candy.name}
-                                            <button className="delButton" onClick={() => this.props.discontinue(candy.id)}><img src={food} alt="food" className="foodX" /></button>
+                                            <button className="delButton" onClick={() => this.props.discontinue("candies", candy.id)}><img src={food} alt="food" className="foodX" /></button>
                                         </div>
                                     )
                                 }
