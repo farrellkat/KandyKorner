@@ -67,11 +67,6 @@
       "id": 8,
       "candyTypeId": 3,
       "name": "Tootsie Roll Pop"
-    },
-    {
-      "id": 9,
-      "candyTypeId": 3,
-      "name": "Lollipop"
     }
   ]
 }

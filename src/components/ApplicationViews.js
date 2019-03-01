@@ -3,6 +3,10 @@ import { Route } from 'react-router-dom'
 import EmployeeList from './EmployeeList'
 import CandyList from './CandyList'
 import StoreList from './StoreList'
+import storeManager from '../modules/storeManager';
+import employeeManager from '../modules/employeeManager';
+import candyTypeManager from '../modules/candyTypeManager';
+import candyManager from '../modules/candyManager';
 
 export default class ApplicationViews extends Component {
 
@@ -26,21 +30,26 @@ export default class ApplicationViews extends Component {
     }
 
     componentDidMount() {
-        const newState = {}
-
-        fetch("http://localhost:5002/stores")
-            .then(r => r.json())
-            .then(stores => newState.stores = stores)
-            .then(() => fetch("http://localhost:5002/employees")
-                .then(r => r.json()))
-            .then(employees => newState.employees = employees)
-            .then(() => fetch("http://localhost:5002/candyTypes")
-                .then(r => r.json()))
-            .then(candyTypes => newState.candyTypes = candyTypes)
-            .then(() => fetch("http://localhost:5002/candies")
-                .then(r => r.json()))
-            .then(candies => newState.candies = candies)
-            .then(() => this.setState(newState))
+        storeManager.getAll().then(stores => {
+            this.setState({
+                stores: stores
+            })
+        })
+            .then(() => employeeManager.getAll().then(employees => {
+                this.setState({
+                    employees: employees
+                })
+            }))
+            .then(() => candyTypeManager.getAll().then(candyTypes => {
+                this.setState({
+                    candyTypes: candyTypes
+                })
+            }))
+            .then(() => candyManager.getAll().then(candies => {
+                this.setState({
+                    candies: candies
+                })
+            }))
     }
 
     render() {
